@@ -27,45 +27,61 @@ async function start() {
         let calcOne = (upperRange - userSecretNum);
         let compGuessOne = Math.round(Math.log2(calcOne)+1);
         console.log("My first guess is: " + compGuessOne);
+        return compGuessOne;
       }
       compGuess();
-    }
-// Question time - Higher, Lower or Correct? 
-// And resetting the high/low end of the range to guessed number +/- 1
-
-
-async function highOrLow(){
-  let userAnswerOne = await ask ("Is my guess (H)igher, (L)ower than your number or am I (C)orrect?");
-  
-if (userAnswerOne === "H" || userAnswerOne === "h"){
-  console.log("Higher! Okay")
-  //? Can I have a function within an if statement? Can I use the compGuess() - 1 as the upper end of the range?
-  //? int he L or l category - Can I use the compGuess() + 1 as the lower end of the range?
-  
-  }
-if (userAnswerOne === "C" || userAnswerOne === "c"){
-  console.log("Hooray, I guessed right");
-  return highOrLow;
-  // End after this, maybe ask to play again?
-  }
-} 
-    start();
     
+    // Question time - Higher, Lower or Correct? 
+    // And resetting the high/low end of the range to guessed number +/- 1
+    async function highOrLow(){
+      let userAnswerOne = await ask ("Is my guess (H)igher, (L)ower than your number or am I (C)orrect? ");
+      
+      if (userAnswerOne === "H" || userAnswerOne === "h"){
+        console.log("Oh shucks - higher! Okay, let me try again...");
+        //?How do I get the value for compGuessOne to show here?  
 
+      } else if (userAnswerOne === "L" || userAnswerOne === "l"){
+        console.log("Got it - lower! Okay, let me try again...");
 
+      } else if (userAnswerOne === "C" || userAnswerOne === "c"){
+        console.log("Whoop! Whoop! - I got it right.") 
 
+      }else{
+        console.log("I didn't quite catch your answer, could you please try again?")
+        highOrLow();
+      }
+      
+        
 
-
+        // let upperRangeTwo = (1 + compGuess);
+        // console.log(upperRangeTwo);
+        // let calcTwo = (upperRangeTwo - userSecretNum);
+        // let compGuessTwo = Math.round(Math.log2(calcTwo)+1);
+        // console.log("My next guess is: " + compGuessTwo);
+        
+        //? Can I have a function within an if statement? Can I use the compGuess() - 1 as the upper end of the range?
+        //? int he L or l category - Can I use the compGuess() + 1 as the lower end of the range?
+        
+        //   }
+        // if (userAnswerOne === "C" || userAnswerOne === "c"){
+          //   console.log("Hooray, I guessed right");
+          //   return highOrLow;
+          //   // End after this, maybe ask to play again?
+        
+      }
+      highOrLow();
+     
+    }
+      start();
   
 
 //Math.floor() function returns the largest integer less than or equal to a given number
 
 
 
-  // function UserInput(){
+  // function UserInput()
   //   let userInputOne = parseInt(upperRange);
   //   
-  // }
     
 
  
@@ -80,18 +96,18 @@ if (userAnswerOne === "C" || userAnswerOne === "c"){
 
 // userInputOne();
 
-  // if(secretNumber2 === secretNumber){
+  // if(secretNumber2 === secretNumber)
   //   console.log("WOW! I guess it right - the number you chose was: " + secretNumber2);
-  // } else if (secretNumber2 > secretNumber){
+ // else if (secretNumber2 > secretNumber){
   //   console.log("")
-  // }
+
 
   // let secretNumber2 = parseInt(secretNumber)
 
 // use rl.then?
 // function range(){
 
-// }
+
 // async function rangeDefine (){
 //   console.log("")
 
@@ -102,7 +118,7 @@ if (userAnswerOne === "C" || userAnswerOne === "c"){
 
 //   console.log("Super! You chose the range:" + min + " to " + userInputOne)
 
-// }
+
 
 // rangeDefine();
 
